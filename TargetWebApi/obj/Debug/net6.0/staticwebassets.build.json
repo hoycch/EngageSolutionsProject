@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8U6Q+91KHKEFrnIy3t3f+Ri98XXwRCHHJ+qX/PU0Fns=",
+  "Source": "TargetWebApi",
+  "BasePath": "_content/TargetWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
