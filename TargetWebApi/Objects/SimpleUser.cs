@@ -1,6 +1,6 @@
 ﻿namespace TargetWebApi.Objects
 {
-    public class User
+    public class SimpleUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -8,4 +8,5 @@
         public string Phone { get; set; }
         public string CompanyName { get; set; }
     }
+
 }

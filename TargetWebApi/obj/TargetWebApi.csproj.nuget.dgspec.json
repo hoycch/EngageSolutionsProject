@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "B:\\Desktop\\engagesolutions\\TargetWebApi\\TargetWebApi.csproj": {}
+    "B:\\My Documents\\github\\EngageSolutionsProject\\TargetWebApi\\TargetWebApi.csproj": {}
   },
   "projects": {
-    "B:\\Desktop\\engagesolutions\\TargetWebApi\\TargetWebApi.csproj": {
+    "B:\\My Documents\\github\\EngageSolutionsProject\\TargetWebApi\\TargetWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "B:\\Desktop\\engagesolutions\\TargetWebApi\\TargetWebApi.csproj",
+        "projectUniqueName": "B:\\My Documents\\github\\EngageSolutionsProject\\TargetWebApi\\TargetWebApi.csproj",
         "projectName": "TargetWebApi",
-        "projectPath": "B:\\Desktop\\engagesolutions\\TargetWebApi\\TargetWebApi.csproj",
+        "projectPath": "B:\\My Documents\\github\\EngageSolutionsProject\\TargetWebApi\\TargetWebApi.csproj",
         "packagesPath": "C:\\Users\\trio\\.nuget\\packages\\",
-        "outputPath": "B:\\Desktop\\engagesolutions\\TargetWebApi\\obj\\",
+        "outputPath": "B:\\My Documents\\github\\EngageSolutionsProject\\TargetWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

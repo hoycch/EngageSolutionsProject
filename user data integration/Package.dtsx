@@ -11,99 +11,18 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="114"
-  DTS:VersionGUID="{CEEEC5C8-61D9-43A3-9B36-D7646A32D8F2}">
+  DTS:VersionBuild="131"
+  DTS:VersionGUID="{78C4D99E-4DC5-42BC-9752-4EBB095D21AC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[csv before merge]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{53B08C9B-D1CA-4824-AE4C-6CB20B75589F}"
-      DTS:ObjectName="csv before merge">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="B:\Desktop\engagesolutions\csv_userdata_before_merge.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="first_name"
-              DTS:DTSID="{EEC673EA-AA8F-4F62-A501-4B2BBC48FA49}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="last_name"
-              DTS:DTSID="{978597D1-EBD5-4F99-B4C1-52D2AA0E2457}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="email"
-              DTS:DTSID="{828986EB-ABFF-45BE-BA09-353143ADE4B9}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="phone"
-              DTS:DTSID="{C5BAE6B1-788C-41DB-A670-43CFA213EA27}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="company_name"
-              DTS:DTSID="{125505C8-E46F-4DFA-9CB9-4F6059BBCA15}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="id"
-              DTS:DTSID="{0CCD9FE6-5E65-43FA-9D2C-D3EF09C10ADC}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="phone_main"
-              DTS:DTSID="{200817E1-AFC8-4F63-AD0F-78CF186B8E4B}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[csv conversion error]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{95F62725-1C02-46D6-BE92-150B224BA4B1}"
       DTS:ObjectName="csv conversion error">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::csvFolder] + "error_log\\CSV_Conversion_Error.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -112,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="B:\Desktop\engagesolutions\CSV_Conversion_Error.csv">
+          DTS:ConnectionString="B:\My Documents\github\EngageSolutionsProject\csv\error_log\CSV_Conversion_Error.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -143,10 +62,12 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[csv_duplicates]"
+      DTS:refId="Package.ConnectionManagers[csv duplicates]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{DE3511D7-1FD2-492A-A45A-4F722CDFC546}"
-      DTS:ObjectName="csv_duplicates">
+      DTS:ObjectName="csv duplicates">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::csv_duplicates]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -156,7 +77,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="B:\Desktop\engagesolutions\csv_duplicates.csv">
+          DTS:ConnectionString="B:\My Documents\github\EngageSolutionsProject\csv\manual_process\csv_duplicates.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -235,10 +156,12 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Duplicate json output]"
+      DTS:refId="Package.ConnectionManagers[csv phone conversion error]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{89CCB96A-013B-4D58-8E4B-F28D38BA11F2}"
-      DTS:ObjectName="Duplicate json output">
+      DTS:DTSID="{218F209D-C99D-4304-92F0-9A729D0786B3}"
+      DTS:ObjectName="csv phone conversion error">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::csv_phone_conversion_error]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -247,7 +170,192 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="B:\Desktop\engagesolutions\json_duplicates.csv">
+          DTS:ConnectionString="B:\My Documents\github\EngageSolutionsProject\csv\error_log\Phone_Conversion_Error.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{3048D2B0-C720-496B-B46E-DE92DCB61DD1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{B1C026A9-5A00-4926-9524-5B8564AA6CEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{00DC388A-2A70-460B-94B2-7870586F1FA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone"
+              DTS:DTSID="{6B45ECB6-F268-4F83-849D-CE02AE18E10A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="company_name"
+              DTS:DTSID="{27BF0086-DDDD-49C2-9E2B-56586F15ED08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{A4546E8B-EFFF-4F64-BDD0-99D6F2678331}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone_main"
+              DTS:DTSID="{0262C988-C230-4B17-BD37-FB533BFC4331}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{D003D77C-D78F-42B8-A1C6-E001FD7DA76A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{B4D45CC4-D56E-4CDA-A886-482444DA2DFE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[csv_temp]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{53B08C9B-D1CA-4824-AE4C-6CB20B75589F}"
+      DTS:ObjectName="csv_temp">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::csv_temp_file]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="B:\My Documents\github\EngageSolutionsProject\csv\temp\csv_temp.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{EEC673EA-AA8F-4F62-A501-4B2BBC48FA49}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{978597D1-EBD5-4F99-B4C1-52D2AA0E2457}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{828986EB-ABFF-45BE-BA09-353143ADE4B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone"
+              DTS:DTSID="{C5BAE6B1-788C-41DB-A670-43CFA213EA27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="company_name"
+              DTS:DTSID="{125505C8-E46F-4DFA-9CB9-4F6059BBCA15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{0CCD9FE6-5E65-43FA-9D2C-D3EF09C10ADC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone_main"
+              DTS:DTSID="{200817E1-AFC8-4F63-AD0F-78CF186B8E4B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[json duplicates]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{89CCB96A-013B-4D58-8E4B-F28D38BA11F2}"
+      DTS:ObjectName="json duplicates">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::json_duplicates]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="B:\My Documents\github\EngageSolutionsProject\csv\manual_process\json_duplicates.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -317,10 +425,78 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[json_cache.caw]"
+      DTS:CreationName="CACHE"
+      DTS:DTSID="{0393B0E0-D9F2-4ABB-9245-D224A9ACD55D}"
+      DTS:ObjectName="json_cache.caw">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::json_cache]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:UseFile="True"
+          DTS:ConnectionString="B:\My Documents\github\EngageSolutionsProject\csv\temp\json_cache.caw">
+          <DTS:CacheColumns>
+            <DTS:CacheColumn
+              DTS:DataType="129"
+              DTS:Length="50"
+              DTS:CodePage="1252"
+              DTS:ObjectName="firstname"
+              DTS:DTSID="{04A890B3-0493-4094-9451-888905909F16}"
+              DTS:CreationName="" />
+            <DTS:CacheColumn
+              DTS:DataType="129"
+              DTS:Length="50"
+              DTS:CodePage="1252"
+              DTS:ObjectName="lastname"
+              DTS:DTSID="{BBDDE911-96DE-48FF-AB77-E4FF53C82E7C}"
+              DTS:CreationName="" />
+            <DTS:CacheColumn
+              DTS:DataType="129"
+              DTS:Length="50"
+              DTS:CodePage="1252"
+              DTS:ObjectName="email"
+              DTS:DTSID="{0E12EA45-C6CF-423E-B87E-CA747B1181C1}"
+              DTS:CreationName="" />
+            <DTS:CacheColumn
+              DTS:DataType="129"
+              DTS:Length="30"
+              DTS:CodePage="1252"
+              DTS:ObjectName="phone"
+              DTS:DTSID="{58704273-4345-4A36-93B1-4A54D3C61718}"
+              DTS:CreationName="" />
+            <DTS:CacheColumn
+              DTS:DataType="129"
+              DTS:Length="50"
+              DTS:CodePage="1252"
+              DTS:ObjectName="company_name"
+              DTS:DTSID="{49824F43-7A82-43FE-AE72-B290590B6015}"
+              DTS:CreationName="" />
+            <DTS:CacheColumn
+              DTS:DataType="129"
+              DTS:Length="50"
+              DTS:CodePage="1252"
+              DTS:IndexPosition="1"
+              DTS:ObjectName="phone_main"
+              DTS:DTSID="{E8038CF5-259F-4CC6-90CC-DD2B103197BE}"
+              DTS:CreationName="" />
+            <DTS:CacheColumn
+              DTS:DataType="129"
+              DTS:Length="50"
+              DTS:CodePage="1252"
+              DTS:ObjectName="id"
+              DTS:DTSID="{9C52412A-2482-42B5-AC3F-E8E0D466B140}"
+              DTS:CreationName="" />
+          </DTS:CacheColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[json_temp]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{0CD2FA3B-350D-4F13-85A1-02C58732914F}"
-      DTS:ObjectName="Flat File Connection Manager">
+      DTS:DTSID="{56D31518-BF45-42E1-A079-9783A36C27D1}"
+      DTS:ObjectName="json_temp">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::json_temp_file]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -330,7 +506,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="B:\Desktop\engagesolutions\users.csv">
+          DTS:ConnectionString="B:\My Documents\github\EngageSolutionsProject\csv\temp\json_temp.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -338,8 +514,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="first_name"
-              DTS:DTSID="{558A39DE-FCCC-4840-80DF-39AE7A170D48}"
+              DTS:ObjectName="firstname"
+              DTS:DTSID="{05896579-2652-42D1-8336-46B2AD6E5E53}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -347,8 +523,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="last_name"
-              DTS:DTSID="{A7240A0D-23D0-43EF-BD16-18FE7279C0BB}"
+              DTS:ObjectName="lastname"
+              DTS:DTSID="{9725DDA3-B8F7-4967-8A00-44E50EBA6AD2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -357,7 +533,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="email"
-              DTS:DTSID="{B4E74601-9327-4820-A586-511723110F5D}"
+              DTS:DTSID="{0FF2FCE4-419A-4310-9897-E85F042AA69B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone"
+              DTS:DTSID="{CDEA83AC-1CC0-48F0-8B7E-D480ABF12269}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -365,27 +550,38 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="phone"
-              DTS:DTSID="{3781AC23-E354-43FC-AB43-0292E7A3750C}"
+              DTS:ObjectName="company_name"
+              DTS:DTSID="{13F8870B-C967-4F15-BC88-C2D1A1BED97D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000A_"
+              DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="company_name"
-              DTS:DTSID="{D25F88EF-EF13-4D40-8570-F2AD699A9E74}"
+              DTS:ObjectName="phone_main"
+              DTS:DTSID="{E795D585-420D-49B4-BEFA-A1311B65FCC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{C1A4CC9A-D8F4-455A-A3F1-700146DF1261}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[get users from csv file]"
+      DTS:refId="Package.ConnectionManagers[users.csv]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{9B0B1CB7-7132-48B3-B04C-79C6EC91BDE3}"
-      DTS:ObjectName="get users from csv file">
+      DTS:ObjectName="users.csv">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::csvFolder] + "datasource\\users.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -395,7 +591,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="B:\Desktop\engagesolutions\users.csv">
+          DTS:ConnectionString="B:\My Documents\github\EngageSolutionsProject\csv\datasource\users.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -482,253 +678,84 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[json_saved_in_csv]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{56D31518-BF45-42E1-A079-9783A36C27D1}"
-      DTS:ObjectName="json_saved_in_csv">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="B:\Desktop\engagesolutions\json_userdata_before_merge.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="firstname"
-              DTS:DTSID="{05896579-2652-42D1-8336-46B2AD6E5E53}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="lastname"
-              DTS:DTSID="{9725DDA3-B8F7-4967-8A00-44E50EBA6AD2}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="email"
-              DTS:DTSID="{0FF2FCE4-419A-4310-9897-E85F042AA69B}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="30"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="phone"
-              DTS:DTSID="{CDEA83AC-1CC0-48F0-8B7E-D480ABF12269}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="company_name"
-              DTS:DTSID="{13F8870B-C967-4F15-BC88-C2D1A1BED97D}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="phone_main"
-              DTS:DTSID="{E795D585-420D-49B4-BEFA-A1311B65FCC8}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="id"
-              DTS:DTSID="{C1A4CC9A-D8F4-455A-A3F1-700146DF1261}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[phone conversion error]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{218F209D-C99D-4304-92F0-9A729D0786B3}"
-      DTS:ObjectName="phone conversion error">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="B:\Desktop\engagesolutions\Phone_Conversion_Error.txt">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="first_name"
-              DTS:DTSID="{3048D2B0-C720-496B-B46E-DE92DCB61DD1}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="last_name"
-              DTS:DTSID="{B1C026A9-5A00-4926-9524-5B8564AA6CEA}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="email"
-              DTS:DTSID="{00DC388A-2A70-460B-94B2-7870586F1FA4}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="phone"
-              DTS:DTSID="{6B45ECB6-F268-4F83-849D-CE02AE18E10A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="company_name"
-              DTS:DTSID="{27BF0086-DDDD-49C2-9E2B-56586F15ED08}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="id"
-              DTS:DTSID="{A4546E8B-EFFF-4F64-BDD0-99D6F2678331}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="phone_main"
-              DTS:DTSID="{0262C988-C230-4B17-BD37-FB533BFC4331}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{D003D77C-D78F-42B8-A1C6-E001FD7DA76A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{B4D45CC4-D56E-4CDA-A886-482444DA2DFE}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[save Json data to cache]"
-      DTS:CreationName="CACHE"
-      DTS:DTSID="{0393B0E0-D9F2-4ABB-9245-D224A9ACD55D}"
-      DTS:ObjectName="save Json data to cache">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:UseFile="True"
-          DTS:ConnectionString="B:\Desktop\engagesolutions\json_cache.caw">
-          <DTS:CacheColumns>
-            <DTS:CacheColumn
-              DTS:DataType="129"
-              DTS:Length="50"
-              DTS:CodePage="1252"
-              DTS:ObjectName="firstname"
-              DTS:DTSID="{04A890B3-0493-4094-9451-888905909F16}"
-              DTS:CreationName="" />
-            <DTS:CacheColumn
-              DTS:DataType="129"
-              DTS:Length="50"
-              DTS:CodePage="1252"
-              DTS:ObjectName="lastname"
-              DTS:DTSID="{BBDDE911-96DE-48FF-AB77-E4FF53C82E7C}"
-              DTS:CreationName="" />
-            <DTS:CacheColumn
-              DTS:DataType="129"
-              DTS:Length="50"
-              DTS:CodePage="1252"
-              DTS:ObjectName="email"
-              DTS:DTSID="{0E12EA45-C6CF-423E-B87E-CA747B1181C1}"
-              DTS:CreationName="" />
-            <DTS:CacheColumn
-              DTS:DataType="129"
-              DTS:Length="30"
-              DTS:CodePage="1252"
-              DTS:ObjectName="phone"
-              DTS:DTSID="{58704273-4345-4A36-93B1-4A54D3C61718}"
-              DTS:CreationName="" />
-            <DTS:CacheColumn
-              DTS:DataType="129"
-              DTS:Length="50"
-              DTS:CodePage="1252"
-              DTS:ObjectName="company_name"
-              DTS:DTSID="{49824F43-7A82-43FE-AE72-B290590B6015}"
-              DTS:CreationName="" />
-            <DTS:CacheColumn
-              DTS:DataType="129"
-              DTS:Length="50"
-              DTS:CodePage="1252"
-              DTS:IndexPosition="1"
-              DTS:ObjectName="phone_main"
-              DTS:DTSID="{E8038CF5-259F-4CC6-90CC-DD2B103197BE}"
-              DTS:CreationName="" />
-            <DTS:CacheColumn
-              DTS:DataType="129"
-              DTS:Length="50"
-              DTS:CodePage="1252"
-              DTS:ObjectName="id"
-              DTS:DTSID="{9C52412A-2482-42B5-AC3F-E8E0D466B140}"
-              DTS:CreationName="" />
-          </DTS:CacheColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4C855477-0AD6-4767-9499-ABF0F67CB64A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="csvFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">B:\My Documents\github\EngageSolutionsProject\csv\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0BB28472-E77D-4FCE-B730-DB56128C6774}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::csvFolder]+&quot;manual_process\\csv_duplicates.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="csv_duplicates">
+      <DTS:VariableValue
+        DTS:DataType="8">B:\My Documents\github\EngageSolutionsProject\csv\manual_process\csv_duplicates.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6482340E-E06D-4246-9966-05CA74145E77}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::csvFolder] + &quot;error_log\\Phone_Conversion_Error.txt&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="csv_phone_conversion_error">
+      <DTS:VariableValue
+        DTS:DataType="8">B:\My Documents\github\EngageSolutionsProject\csv\error_log\Phone_Conversion_Error.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{35DA0A01-417C-4BE8-B755-ECF4204D97F9}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::csvFolder] + &quot;temp\\csv_temp.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="csv_temp_file">
+      <DTS:VariableValue
+        DTS:DataType="8">B:\My Documents\github\EngageSolutionsProject\csv\temp\csv_temp.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{39F98E19-D984-4FC3-8AA2-AC9D2CF1278C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::csvFolder] + &quot;temp\\json_cache.caw&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="json_cache">
+      <DTS:VariableValue
+        DTS:DataType="8">B:\My Documents\github\EngageSolutionsProject\csv\temp\json_cache.caw</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{780FF815-D0F0-4948-90CD-FC2681DE04CD}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::csvFolder]+&quot;manual_process\\json_duplicates.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="json_duplicates">
+      <DTS:VariableValue
+        DTS:DataType="8">B:\My Documents\github\EngageSolutionsProject\csv\manual_process\json_duplicates.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0254A6FA-5B98-411D-B682-DCDFBA6AE679}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::csvFolder] + &quot;temp\\json_temp.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="json_temp_file">
+      <DTS:VariableValue
+        DTS:DataType="8">B:\My Documents\github\EngageSolutionsProject\csv\temp\json_temp.csv</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\import and process"
@@ -849,8 +876,8 @@
               <connections>
                 <connection
                   refId="Package\import and process\CSV input.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[get users from csv file]"
-                  connectionManagerRefId="Package.ConnectionManagers[get users from csv file]"
+                  connectionManagerID="Package.ConnectionManagers[users.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[users.csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -1079,6 +1106,146 @@
               </outputs>
             </component>
             <component
+              refId="Package\import and process\csv save to csv before merge"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="csv save to csv before merge"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\import and process\csv save to csv before merge.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[csv_temp]"
+                  connectionManagerRefId="Package.ConnectionManagers[csv_temp]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].Columns[phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="phone"
+                      externalMetadataColumnId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone]"
+                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].Columns[company_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="company_name"
+                      externalMetadataColumnId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[company_name]"
+                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[company_name]" />
+                    <inputColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].Columns[id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].Columns[phone_main]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="phone_main"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone_main]"
+                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[phone_main]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[company_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="company_name" />
+                    <externalMetadataColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone_main]"
+                      dataType="wstr"
+                      length="50"
+                      name="phone_main" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
               refId="Package\import and process\Duplicate Json"
               componentClassID="Microsoft.Multicast"
               contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -1185,12 +1352,12 @@
               </inputs>
             </component>
             <component
-              refId="Package\import and process\json save to csv"
+              refId="Package\import and process\json save to csv before merge"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Destination"
               localeId="1033"
-              name="json save to csv"
+              name="json save to csv before merge"
               version="1">
               <properties>
                 <property
@@ -1209,116 +1376,116 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\import and process\json save to csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[json_saved_in_csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[json_saved_in_csv]"
+                  refId="Package\import and process\json save to csv before merge.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[json_temp]"
+                  connectionManagerRefId="Package.ConnectionManagers[json_temp]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input]"
+                  refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input]"
                   hasSideEffects="true"
                   name="Flat File Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].Columns[firstname]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].Columns[firstname]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="firstname"
-                      externalMetadataColumnId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[firstname]"
+                      externalMetadataColumnId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[firstname]"
                       lineageId="Package\import and process\Sort by phone1.Outputs[Sort Output].Columns[firstname]" />
                     <inputColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].Columns[lastname]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].Columns[lastname]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="lastname"
-                      externalMetadataColumnId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[lastname]"
+                      externalMetadataColumnId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[lastname]"
                       lineageId="Package\import and process\Sort by phone1.Outputs[Sort Output].Columns[lastname]" />
                     <inputColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].Columns[email]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].Columns[email]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="email"
                       cachedSortKeyPosition="2"
-                      externalMetadataColumnId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      externalMetadataColumnId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[email]"
                       lineageId="Package\import and process\Sort by phone1.Outputs[Sort Output].Columns[email]" />
                     <inputColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].Columns[phone]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].Columns[phone]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="phone"
-                      externalMetadataColumnId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[phone]"
+                      externalMetadataColumnId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone]"
                       lineageId="Package\import and process\Sort by phone1.Outputs[Sort Output].Columns[phone]" />
                     <inputColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].Columns[company_name]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].Columns[company_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="company_name"
-                      externalMetadataColumnId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[company_name]"
+                      externalMetadataColumnId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[company_name]"
                       lineageId="Package\import and process\Sort by phone1.Outputs[Sort Output].Columns[company_name]" />
                     <inputColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].Columns[phone_main]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].Columns[phone_main]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="phone_main"
                       cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[phone_main]"
+                      externalMetadataColumnId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone_main]"
                       lineageId="Package\import and process\Sort by phone1.Outputs[Sort Output].Columns[phone_main]" />
                     <inputColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].Columns[id]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].Columns[id]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="id"
-                      externalMetadataColumnId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      externalMetadataColumnId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[id]"
                       lineageId="Package\import and process\Sort by phone1.Outputs[Sort Output].Columns[id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[firstname]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[firstname]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="firstname" />
                     <externalMetadataColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[lastname]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[lastname]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="lastname" />
                     <externalMetadataColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[email]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="email" />
                     <externalMetadataColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[phone]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="phone" />
                     <externalMetadataColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[company_name]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[company_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="company_name" />
                     <externalMetadataColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[phone_main]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone_main]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="phone_main" />
                     <externalMetadataColumn
-                      refId="Package\import and process\json save to csv.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      refId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[id]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -2547,8 +2714,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\import and process\save to cache file.Connections[CacheConnection]"
-                  connectionManagerID="Package.ConnectionManagers[save Json data to cache]"
-                  connectionManagerRefId="Package.ConnectionManagers[save Json data to cache]"
+                  connectionManagerID="Package.ConnectionManagers[json_cache.caw]"
+                  connectionManagerRefId="Package.ConnectionManagers[json_cache.caw]"
                   description="The connection used to access the cache."
                   name="CacheConnection" />
               </connections>
@@ -2670,146 +2837,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   <externalMetadataColumns />
                 </output>
               </outputs>
-            </component>
-            <component
-              refId="Package\import and process\save to csv before merge"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="1033"
-              name="save to csv before merge"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\import and process\save to csv before merge.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[csv before merge]"
-                  connectionManagerRefId="Package.ConnectionManagers[csv before merge]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].Columns[first_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="first_name"
-                      externalMetadataColumnId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
-                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[first_name]" />
-                    <inputColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].Columns[last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="last_name"
-                      externalMetadataColumnId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
-                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[last_name]" />
-                    <inputColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].Columns[email]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="email"
-                      externalMetadataColumnId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[email]"
-                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[email]" />
-                    <inputColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].Columns[phone]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="phone"
-                      externalMetadataColumnId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone]"
-                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[phone]" />
-                    <inputColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].Columns[company_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="company_name"
-                      externalMetadataColumnId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[company_name]"
-                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[company_name]" />
-                    <inputColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].Columns[id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="id"
-                      externalMetadataColumnId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[id]"
-                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[id]" />
-                    <inputColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].Columns[phone_main]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="phone_main"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone_main]"
-                      lineageId="Package\import and process\Sort.Outputs[Sort Output].Columns[phone_main]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="first_name" />
-                    <externalMetadataColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="last_name" />
-                    <externalMetadataColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[email]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="email" />
-                    <externalMetadataColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="phone" />
-                    <externalMetadataColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[company_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="company_name" />
-                    <externalMetadataColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="id" />
-                    <externalMetadataColumn
-                      refId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input].ExternalColumns[phone_main]"
-                      dataType="wstr"
-                      length="50"
-                      name="phone_main" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
             </component>
             <component
               refId="Package\import and process\Sort"
@@ -3354,7 +3381,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <paths>
             <path
               refId="Package\import and process.Paths[Cache Output]"
-              endId="Package\import and process\json save to csv.Inputs[Flat File Destination Input]"
+              endId="Package\import and process\json save to csv before merge.Inputs[Flat File Destination Input]"
               name="Cache Output"
               startId="Package\import and process\save to cache file.Outputs[Cache Output]" />
             <path
@@ -3389,7 +3416,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\import and process\Sort by phone1.Outputs[Sort Output]" />
             <path
               refId="Package\import and process.Paths[Sort Output1]"
-              endId="Package\import and process\save to csv before merge.Inputs[Flat File Destination Input]"
+              endId="Package\import and process\csv save to csv before merge.Inputs[Flat File Destination Input]"
               name="Sort Output"
               startId="Package\import and process\Sort.Outputs[Sort Output]" />
           </paths>
@@ -3432,8 +3459,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\merge data and post\csv file source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[csv before merge]"
-                  connectionManagerRefId="Package.ConnectionManagers[csv before merge]"
+                  connectionManagerID="Package.ConnectionManagers[csv_temp]"
+                  connectionManagerRefId="Package.ConnectionManagers[csv_temp]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -3695,8 +3722,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\merge data and post\csv manual check file.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[csv_duplicates]"
-                  connectionManagerRefId="Package.ConnectionManagers[csv_duplicates]"
+                  connectionManagerID="Package.ConnectionManagers[csv duplicates]"
+                  connectionManagerRefId="Package.ConnectionManagers[csv duplicates]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
@@ -3954,8 +3981,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\merge data and post\json file source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[json_saved_in_csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[json_saved_in_csv]"
+                  connectionManagerID="Package.ConnectionManagers[json_temp]"
+                  connectionManagerRefId="Package.ConnectionManagers[json_temp]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -4219,8 +4246,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\merge data and post\json manual check file.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Duplicate json output]"
-                  connectionManagerRefId="Package.ConnectionManagers[Duplicate json output]"
+                  connectionManagerID="Package.ConnectionManagers[json duplicates]"
+                  connectionManagerRefId="Package.ConnectionManagers[json duplicates]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
@@ -4405,8 +4432,8 @@ where [refTable].[phone_main] = ?</property>
               <connections>
                 <connection
                   refId="Package\merge data and post\Lookup.Connections[CacheConnection]"
-                  connectionManagerID="Package.ConnectionManagers[save Json data to cache]"
-                  connectionManagerRefId="Package.ConnectionManagers[save Json data to cache]"
+                  connectionManagerID="Package.ConnectionManagers[json_cache.caw]"
+                  connectionManagerRefId="Package.ConnectionManagers[json_cache.caw]"
                   description="Connection manager used to access lookup data."
                   name="CacheConnection" />
               </connections>
@@ -5046,7 +5073,7 @@ where [refTable].[phone_main] = ?</property>
                   name="SourceCode"
                   state="cdata">
                   <arrayElements
-                    arrayElementCount="36">
+                    arrayElementCount="42">
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
                     <arrayElement
@@ -5193,6 +5220,7 @@ using System.Text;
 using System.Web.Script.Serialization;
 using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
 using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+using SC_fd7e7590bd20433f8ceec8e127879cc9;
 #endregion
 
 /// <summary>
@@ -5279,39 +5307,68 @@ public class ScriptMain : UserComponent
     public override void PostExecute()
     {
         base.PostExecute();
-        var serializer = new JavaScriptSerializer();
-        string jsonString = serializer.Serialize(userList);
 
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://localhost:7181/PostUser");
-        request.Method = "POST";
-        request.ContentType= "application/json";
-        try
+
+        foreach (var user in userList)
         {
-            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            var engageUser = new EngageUser(){
+                 last_name = user.LastName,
+                 first_name = user.FirstName,
+                 email = user.Email,
+                 bio = "",
+                 pin = "",
+                 image = "",
+                 groups = new List<string>() { "" },
+                 password = "",
+                 username = "",
+                 job_title = "",
+                 reference= "",
+                attributes = new List<EngageAttribute>() { new EngageAttribute() {
+                    title = "",
+                    value = "",
+                    type = "",
+                    icon = ""
+                } },
+                department = "",
+                 start_date = "",
+                 manager_ref = "",
+                 location_ref = "",
+                 date_of_birth = "",
+                 visible_to_groups = new List<string>() { "" }
+            };
+
+
+            var serializer = new JavaScriptSerializer();
+            string jsonString = serializer.Serialize(engageUser);
+            try
             {
-                streamWriter.Write(jsonString);
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://localhost:7181/PostUser");
+                request.Method = "POST";
+                request.ContentType = "application/json";
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    streamWriter.Write(jsonString);
+                }
+                var httpResponse = (HttpWebResponse)request.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    using (StreamWriter file = File.AppendText($"{Variables.csvFolder}PostResults.txt"))
+                    {
+                        file.WriteLine(result);
+                    }
+                }
+
             }
-            var httpResponse = (HttpWebResponse)request.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            catch (Exception e)
             {
-                var result = streamReader.ReadToEnd();
+
+                throw new WebException(e.Message);
             }
-
-        }
-        catch (Exception e)
-        {
-
-            throw new WebException(e.Message) ;
         }
 
-        //using (HttpClient httpClient = new HttpClient())
-        //{
-        //    var webRequest = new HttpRequestMessage(HttpMethod.Post, "")
-        //    {
-        //        Content = new StringContent(jsonString, Encoding.UTF8, "application/json")
-        //    };
-        //    var response = httpClient.Send(webRequest);
-        //}
+
+
     }
 
     /// <summary>
@@ -5536,6 +5593,14 @@ public class Variables
         ParentComponent = Component;
     }
 
+    public String csvFolder
+    {
+        get
+        {
+            return (String)(ParentComponent.ReadOnlyVariables["csvFolder"].GetValueWithContext(ScriptComponent.EvaluatorContext));
+        }
+    }
+
 }
 ]]></arrayElement>
                     <arrayElement
@@ -5595,32 +5660,22 @@ namespace SC_fd7e7590bd20433f8ceec8e127879cc9.Properties {
     <msb:CodeName>SC_fd7e7590bd20433f8ceec8e127879cc9</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_fd7e7590bd20433f8ceec8e127879cc9</msb:DisplayName>
-    <msb:ProjectId>{BB68218A-ED3D-4C7D-AF3B-2E6B46E8636B}</msb:ProjectId>
+    <msb:ProjectId>{31D7E40B-833C-46BA-AECB-6CFBE2AC5B6C}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_fd7e7590bd20433f8ceec8e127879cc9.csproj" />
     <msb:File Include="ComponentWrapper.cs" />
-    <msb:File Include="User.cs" />
-    <msb:File Include="packages.config" />
     <msb:File Include="main.cs" />
     <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="EngageAttribute.cs" />
+    <msb:File Include="EngageUser.cs" />
+    <msb:File Include="User.cs" />
     <msb:File Include="Properties\AssemblyInfo.cs" />
     <msb:File Include="Properties\Resources.resx" />
     <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="packages.config" />
     <msb:File Include="Properties\Settings.settings" />
     <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:Breakpoint Include="d59010d6e3c340f7abb1bb965d3679fa">
-      <msb:FileName>main.cs</msb:FileName>
-      <msb:ColumnNumber>20</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>114</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>C#</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
   </msb:ItemGroup>
 </c:Project>]]></arrayElement>
                     <arrayElement
@@ -5644,8 +5699,7 @@ namespace SC_fd7e7590bd20433f8ceec8e127879cc9.Properties {
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -5667,6 +5721,8 @@ namespace SC_fd7e7590bd20433f8ceec8e127879cc9.Properties {
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EngageAttribute.cs" />
+    <Compile Include="EngageUser.cs" />
     <Compile Include="User.cs" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -5849,6 +5905,87 @@ namespace SC_fd7e7590bd20433f8ceec8e127879cc9.Properties {
 <packages>
   <package id="System.IO" version="4.3.0" targetFramework="net47" />
 </packages>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[EngageUser.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SC_fd7e7590bd20433f8ceec8e127879cc9
+{
+    public class EngageUser
+    {
+        public string reference { get; set; }
+        public string username { get; set; }
+        public string first_name { get; set; }
+        public int first_name_editable { get; set; }
+        public string last_name { get; set; }
+        public int lastName_editable { get; set; }
+        public string department { get; set; }
+        public int department_visible { get; set; }
+        public int department_editable { get; set; }
+        public string manager_ref { get; set; }
+        public int manager_visible { get; set; }
+        public string location_ref { get; set; }
+        public string job_title { get; set; }
+        public int job_title_visible { get; set; }
+        public int job_title_editable { get; set; }
+        public string email { get; set; }
+        public int email_visible { get; set; }
+        public int email_editable { get; set; }
+        public string password { get; set; }
+        public string date_of_birth { get; set; }
+        public int date_of_birth_visible { get; set; }
+        public int date_of_birth_editable { get; set; }
+        public string start_date { get; set; }
+        public int start_date_visible { get; set; }
+        public int start_date_editable { get; set; }
+        public string image { get; set; }
+        public string bio { get; set; }
+        public int bio_visible { get; set; }
+        public int bio_editable { get; set; }
+        public string pin { get; set; }
+        public int status { get; set; }
+        public List<EngageAttribute> attributes { get; set; }
+        public List<string> groups { get; set; }
+        public List<string> visible_to_groups { get; set; }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[EngageAttribute.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SC_fd7e7590bd20433f8ceec8e127879cc9
+{
+    using System.Collections.Generic;
+
+    public class EngageAttribute
+    {
+        public string title { get; set; }
+        public string value { get; set; }
+        public string type { get; set; }
+        public int is_visible { get; set; }
+        public int is_editable { get; set; }
+        public int user_managed { get; set; }
+        public string icon { get; set; }
+        public int display_order { get; set; }
+    }
+
+}
+]]></arrayElement>
                   </arrayElements>
                 </property>
                 <property
@@ -5864,157 +6001,292 @@ namespace SC_fd7e7590bd20433f8ceec8e127879cc9.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-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
+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
-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
-BH4LAAAEKhp+DAAABCoeAoAMAAAEKhp+DQAABCoeAigxAAAKKi5zKgAABoANAAAEKgAAAEJTSkIB
-AAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAIwIAAAjfgAA+AgAAPwIAAAjU3RyaW5ncwAA
-AAD0EQAA8AAAACNVUwDkEgAAEAAAACNHVUlEAAAA9BIAAOQBAAAjQmxvYgAAAAAAAAACAAABVxWi
-CQkBAAAA+gEzABYAAAEAAAAsAAAACQAAAA0AAAArAAAAEgAAADEAAAAfAAAAAQAAAAQAAAAUAAAA
-GgAAAAEAAAABAAAABQAAAAEAAAAAAMoEAQAAAAAABgCZA/oGBgAtBPoGBgDlAucGDwBuBwAABgAS
-A/8FBgB8A/8FBgBdA/8FBgAUBP8FBgC5A/8FBgDSA/8FBgApA/8FBgBEA3IEBgANCIkFBgCtAvoG
-CgDtA+IBBgABAFAADgCCCBQIBgCtBj0ABgBTBj0ABgAUBokFCgCHBuIBEgB4BuIBCgA7BuIBCgBV
-COIBBgDIAucGBgCYBhoHBgAvBsoFDgCSApYEDgD5ApYEDgBPArUFFgDFBt8FDgCGCBQIBgCCBT0A
-BgC6Bj0ABgAnAYkFDgBrAhQIDgBnAhQIBgBgBj0ADgARBhQIBgCPBIkFBgAeBokFBgAiAokFBgAz
-AYkFBgDyCP8FAAAAACwAAAAAAAEAAQAAABAAqAYAADUAAQABAAEAEACcBQAAFAAGAAwAAQAQAGsG
-AABVAAcAEAABABAANwgAAGEABwAfAAEAEAABCAAANQAJACMAAQAQAKwHAAA1AAoAJAAAABAAIQd9
-BzUACwAlAAABEADbB30HeQANACkAAQCQALUAAQB2ALUAAQDfALUAAQDIALUAAQCrALUAAQCRCLgA
-BgABCMAABgCsB8QAAQBFCMgAAQBFCMgAEQCQBcwAEQA/AtAAEQALAdQAUCAAAAAAhghxAUQAAQBY
-IAAAAACGCH8BEAABAGEgAAAAAIYIVwFEAAIAaSAAAAAAhghkARAAAgByIAAAAACGCKwERAADAHog
-AAAAAIYItgQQAAMAgyAAAAAAhggDAkQABACLIAAAAACGCA0CEAAEAJQgAAAAAIYIlwFEAAUAnCAA
-AAAAhginARAABQClIAAAAACGGNoGBgAGAK0gAAAAAMYASwQGAAYAuCAAAAAAxgBWBAYABgCAIQAA
-AADGAM8I2AAGANkhAAAAAIYY2gYGAAcA7CEAAAAAhhjaBlUABwD3IQAAAACGCMAERAAKAAwiAAAA
-AIYIQAVxAAoAFSIAAAAAhgjSAUQACgAqIgAAAACGCCkFcQAKADMiAAAAAIYIbwBEAAoASCIAAAAA
-hgjyBHEACgBRIgAAAACGCKcFRAAKAGYiAAAAAIYIUQVxAAoAbyIAAAAAhgjEAUQACgCEIgAAAACG
-CBQFcQAKAI0iAAAAAIYItwFEAAoAoiIAAAAAhggABXEACgCrIgAAAACGAOYIcQAKALMiAAAAAIYA
-HwhxAAoAuyIAAAAAhhjaBgYACgDbIgAAAADGAMII3gAKAAAjAAAAAMYBuwjYAA4AEyMAAAAAxgHP
-CNgADwAVIwAAAACGGNoG6AAQACQjAAAAAIYY2gboABEApSAAAAAAgxjaBgYAEgAzIwAAAACTCJQG
-7gASAF8jAAAAAJMIJwLzABIAZiMAAAAAkwgzAvgAEgBuIwAAAACWCCsI/gATAHUjAAAAAIYY2gYG
-ABMAfSMAAAAAkRjgBgMBEwAAAAEAYgQAAAEAYgQAAAEAYgQAAAEAYgQAAAEAYgQAAAEA6ggAAAEA
-jQYAAAIAtgcAAAMASQYAAAEANQAAAAIAjQEAAAMAjQYAAAQASQYAAAEAjQYAAAEA6ggAAAEAWwgA
-AAEAWwgAAAEAYgQJANoGAQARANoGBgAZANoGCgApANoGEAAxANoGEAA5ANoGEABBANoGEABJANoG
-EABRANoGEABZANoGEABhANoGEABxANoGBgB5ANoGBgDJANoGBgDpANoGFQBpANoGBgDBAEsEBgDB
-AFYEBgD5ANoGBgD5AGgEJQABAYsCKgABAQABEAABARcCEAABAXgFMQCRANoGNwARAacCEAAZAYMC
-BgABAXcCPgAhAWYFMQCZANoGNwAxAfYARAChABsBRAA5AdoGEAAMAGsATwAMANoGBgCpANoGVQCp
-AI0GXwCpALYHYwCxAIwEZwCpAF8FbACpAOYIcQCpAB8IcQDBANoGBgBBAeQHdQDBAMoHfQBRAUUB
-gwBRAe4IjADRANoGkgDxANoGBgAgAGMA3wEhAGMA3wEuAAsAHgEuABMAJwEuABsARgEuACMATwEu
-ACsAeAEuADMAeAEuADsAeAEuAEMATwEuAEsAfgEuAFMAeAEuAFsAlQFAAGMA3wFBAGMA3wFgAGMA
-3wFhAGMA3wFjAGsA3wGAAGMA3wGBAGMA3wGgAGMA3wGhAGMA3wHAAGMA3wHgAGMA3wEAAWMA3wED
-AXMA3wEgAWMA3wFAAWMA3wGhAWMA3wFJAnsARgFpAnsARgEbAAIAAQAEAAYACAASAAkAFAAAAIMB
-BwEAAGgBBwEAALoEBwEAABECBwEAAKsBBwEAAMQEBwEAAEQFCwEAANYBBwEAAC0FCwEAAHMABwEA
-APYECwEAAKsFBwEAAFUFCwEAAMgBBwEAABgFCwEAALsBBwEAAAQFCwEAAJgGDwEAAEcCFAEAAC8I
-GQECAAEAAwABAAIAAwACAAMABQABAAQABQACAAUABwABAAYABwACAAcACQABAAgACQACAAkACwAB
-AAoACwACABEADQACABIADwACABMAEQACABQAEwACABUAFQACABYAFwACABcAGQACABgAGwACABkA
-HQACABoAHwACABsAIQACABwAIwACACYAJQACACcAJwABACgAJwACACkAKQBIAASAAAABAAAAAAAA
-AAAAAAAAAAgAAAAEAAAAAAAAAAAAAACaAEcAAAAAABAAAAAAAAAAAAAAAKMAZQgAAAAABAAAAAAA
-AAAAAAAAmgCJBQAAAAAQAAAAAAAAAAAAAACjAJoIAAAAAAQAAAAAAAAAAAAAAKwA6wcAAAAAAAAA
-AAEAAAArBwAAAAAATGlzdGAxAFNDX2ZkN2U3NTkwYmQyMDQzM2Y4Y2VlYzhlMTI3ODc5Y2M5ADxN
-b2R1bGU+AElucHV0SUQAU3lzdGVtLklPAG1zY29ybGliAFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5l
-cmljAEFkZABnZXRfaWQAPExhc3ROYW1lPmtfX0JhY2tpbmdGaWVsZAA8Rmlyc3ROYW1lPmtfX0Jh
-Y2tpbmdGaWVsZAA8Q29tcGFueU5hbWU+a19fQmFja2luZ0ZpZWxkADxQaG9uZT5rX19CYWNraW5n
-RmllbGQAPEVtYWlsPmtfX0JhY2tpbmdGaWVsZABSZWFkVG9FbmQAc2V0X01ldGhvZABkZWZhdWx0
-SW5zdGFuY2UAZ2V0X01lc3NhZ2UASURpc3Bvc2FibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlw
-ZUZyb21IYW5kbGUAZ2V0X0xhc3ROYW1lAHNldF9MYXN0TmFtZQBnZXRfRmlyc3ROYW1lAHNldF9G
-aXJzdE5hbWUASW5wdXROYW1lAGdldF9Db21wYW55TmFtZQBzZXRfQ29tcGFueU5hbWUAZ2V0X2xh
-c3RuYW1lAGdldF9maXJzdG5hbWUAZ2V0X2NvbXBhbnluYW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIu
-RHRzLlBpcGVsaW5lAGdldF9QaG9uZQBzZXRfUGhvbmUAc2V0X0NvbnRlbnRUeXBlAGdldF9DdWx0
-dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBI
-dHRwV2ViUmVzcG9uc2UAR2V0UmVzcG9uc2UARGlzcG9zZQBDcmVhdGUARWRpdG9yQnJvd3NhYmxl
-U3RhdGUAV3JpdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29k
-ZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBB
-c3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZy
-YW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlE
-ZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2Vt
-Ymx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0
-Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVu
-dGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBT
-ZXJpYWxpemUAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBHZXRTdHJpbmcAU3lzdGVtLkNvbXBv
-bmVudE1vZGVsAGdldF9FbWFpbABzZXRfRW1haWwAZ2V0X2VtYWlsAFNDX2ZkN2U3NTkwYmQyMDQz
-M2Y4Y2VlYzhlMTI3ODc5Y2M5LmRsbABnZXRfaWRfSXNOdWxsAGdldF9sYXN0bmFtZV9Jc051bGwA
-Z2V0X2ZpcnN0bmFtZV9Jc051bGwAZ2V0X2NvbXBhbnluYW1lX0lzTnVsbABnZXRfZW1haWxfSXNO
-dWxsAGdldF9waG9uZW1haW5fSXNOdWxsAEdldFJlc3BvbnNlU3RyZWFtAEdldFJlcXVlc3RTdHJl
-YW0AU3lzdGVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AZ2V0X3Bob25lbWFpbgBTeXN0ZW0uQ29u
-ZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uV2ViLlNjcmlwdC5TZXJpYWxp
-emF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAFdlYkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1
-bHR1cmVJbmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAFN0cmVhbVJlYWRlcgBUZXh0UmVhZGVy
-AElucHV0MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFu
-YWdlcgBVc2VyAFN0cmVhbVdyaXRlcgBUZXh0V3JpdGVyAEphdmFTY3JpcHRTZXJpYWxpemVyAC5j
-dG9yAC5jY3RvcgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2
-aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNDX2ZkN2U3NTkwYmQyMDQzM2Y4Y2VlYzhlMTI3ODc5Y2M5
-LlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ19mZDdlNzU5
-MGJkMjA0MzNmOGNlZWM4ZTEyNzg3OWNjOS5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBCdWZmZXJDb2x1
-bW5JbmRleGVzAEdldENvbHVtbkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAFN5c3RlbS5XZWIuRXh0
-ZW5zaW9ucwBDb25uZWN0aW9ucwBPYmplY3QAU3lzdGVtLk5ldABFbmRPZlJvd3NldABnZXRfRGVm
-YXVsdABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25lbnQATWljcm9z
-b2Z0LlNxbFNlcnZlci5UeFNjcmlwdABIdHRwV2ViUmVxdWVzdAB1c2VyTGlzdABNaWNyb3NvZnQu
-U3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AElucHV0MF9Qcm9jZXNz
-SW5wdXRSb3cATmV4dFJvdwBnZXRfQXNzZW1ibHkAAAA/aAB0AHQAcABzADoALwAvAGwAbwBjAGEA
-bABoAG8AcwB0ADoANwAxADgAMQAvAFAAbwBzAHQAVQBzAGUAcgAACVAATwBTAFQAACFhAHAAcABs
-AGkAYwBhAHQAaQBvAG4ALwBqAHMAbwBuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfAGYAZAA3AGUA
-NwA1ADkAMABiAGQAMgAwADQAMwAzAGYAOABjAGUAZQBjADgAZQAxADIANwA4ADcAOQBjAGMAOQAu
-AFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAMSYIqQjz/lKr8oc1ROe
-WFcABCABAQgDIAABBSABARERBCABAQ4FIAEBEXEJBwQOEkUSSRJNBCABDhwGAAESgIEOBSAAEoCF
-BiABARKAhQUgABKAkQMgAA4GFRJBARIIBSABARMACSADARJZHQgSXQMGElkDBh0IBCABDggEIAEC
-CAMgAAIHIAICDhGApQUgAR0ICAgAARKAqRGArQUgABKAsQcgAgEOEoCxCLd6XFYZNOCJCImEXc2A
-gMyRCDG/OFatNk41AgYOBwYVEkEBEggDBhIYAwYSHAMGEmEDBhJpAwYSbQMGEiQFIAEBEhAJIAQB
-CA4SWRJdBSABARJhBAAAEmkEAAASbQUAAQESbQQAABIkAwAAAQMoAA4DKAACBAgAEmkECAASbQQI
-ABIkCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNT
-Q19mZDdlNzU5MGJkMjA0MzNmOGNlZWM4ZTEyNzg3OWNjOQAABQEAAAAAFgEAEUNvcHlyaWdodCBA
-ICAyMDIzAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3Bs
-YXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwQBAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVz
-b3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJl
-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
+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
+BgAMADEROQAUAHETSQAcAD8RBgAcAKQAVAAkAD8RBgAkAKQAVAABAT8RBgABAZENYQAJAZYLZgAJ
+ATAGEAAJAfIKEAAJAREPbQCZAD8RcwAZAbILEAAhAXALBgAJAWQLegApAf8ObQChAD8RcwA5ASYG
+gABBAfQShABJAfATigAZAbMKEACpAJUGgABRAT8REAAUAOcTkAAMAKQAVAAMAD8RBgCxAD8RlACx
+ALYQngCxAEUSogC5APcNpgCxAPgOqwCxAFYUkACxAA0TkADJAD8RBgBBAXMSsADJAFkSuADJABES
+vgBhASIPxADJACoUywBpAfsT0QCBAY0J2ACBAV4U4QDZAD8R5wD5AD8RBgAgAGMAgwIhAGMAgwIu
+AAsAwgEuABMAywEuABsA6gEuACMA8wEuACsAHAIuADMAHAIuADsAHAIuAEMA8wEuAEsAIgIuAFMA
+HAIuAFsAOQJAAGMAgwJBAGMAgwJgAGMAgwJhAGMAgwJjAGsAgwKAAGMAgwKBAGMAgwKgAGMAgwKh
+AGMAgwLAAGMAgwLgAGMAgwIAAWMAgwIgAWMAgwJAAWMAgwJDAXMAgwJhAWMAgwKBAWMAgwKhAWMA
+gwLBAWMAgwLhAWMAgwIBAmMAgwIhAmMAgwJBAmMAgwJhAmMAgwKBAmMAgwKhAmMAgwLBAmMAgwLh
+AmMAgwIBA2MAgwIhA2MAgwJBA2MAgwJhA2MAgwKBA2MAgwKhA2MAgwLBA2MAgwLhA2MAgwIBBGMA
+gwIhBGMAgwJBBGMAgwJhBGMAgwKBBGMAgwKhBGMAgwLABGMAgwLBBGMAgwLgBGMAgwLhBGMAgwIA
+BWMAgwIBBWMAgwIgBWMAgwIhBWMAgwJABWMAgwJBBWMAgwJgBWMAgwJhBWMAgwKABWMAgwKBBWMA
+gwKgBWMAgwKhBWMAgwLABWMAgwLBBWMAgwLgBWMAgwLhBWMAgwIABmMAgwIBBmMAgwIgBmMAgwIh
+BmMAgwJABmMAgwJBBmMAgwJgBmMAgwJhBmMAgwKABmMAgwKBBmMAgwKgBmMAgwLgBmMAgwLhBmMA
+gwIAB2MAgwIgB2MAgwJAB2MAgwJgB2MAgwKAB2MAgwKgB2MAgwKpB3sA6gHAB2MAgwLJB3sA6gHg
+B2MAgwIACGMAgwIgCGMAgwJACGMAgwJgCGMAgwKACGMAgwKgCGMAgwLACGMAgwLgCGMAgwIACWMA
+gwIgCWMAgwJACWMAgwJgCWMAgwKACWMAgwKgCWMAgwLACWMAgwLgCWMAgwIACmMAgwIgCmMAgwJA
+CmMAgwJgCmMAgwKACmMAgwKgCmMAgwLACmMAgwLgCmMAgwIAC2MAgwIgC2MAgwJAC2MAgwJgC2MA
+gwKAC2MAgwKgC2MAgwLAC2MAgwLgC2MAgwIADGMAgwIgDGMAgwJADGMAgwJgDGMAgwKADGMAgwKg
+DGMAgwLADGMAgwLgDGMAgwIADWMAgwIgDWMAgwJADWMAgwJgDWMAgwKADWMAgwKgDWMAgwLADWMA
+gwLgDWMAgwIADmMAgwIgDmMAgwJADmMAgwJgDmMAgwKADmMAgwKgDmMAgwLADmMAgwLgDmMAgwIA
+D2MAgwIgD2MAgwJAD2MAgwIbAAIAAQAEAAYABwASAAgAEwAJABsACgA9AAsAPwAAAAAKlgEAAOUJ
+lgEAAEkOlgEAAOwKlgEAACgKlgEAAF0OlgEAAN0OmgEAAKcKlgEAAMYOmgEAAM4AlgEAAI8OmgEA
+AE0PlgEAAO4OmgEAAJkKlgEAALEOmgEAAIwKlgEAAJ0OmgEAAGYQlgEAAM4JlgEAAIsNlgEAAA8L
+lgEAAEIJngEAAPkHngEAAL0AngEAAHQPlgEAAIYQngEAAHcGlgEAAH8KlgEAAGMKlgEAACMHngEA
+AEYKlgEAAPUGngEAADgTlgEAAGgJngEAACEIngEAANENlgEAAB8JngEAALANlgEAALYJlgEAAE8I
+ngEAAMgGngEAAF0OlgEAANkIngEAALQHngEAAEwGlgEAABcOlgEAAK0IngEAAIYHngEAAIsLlgEA
+AHwIngEAAFMHngEAAI8GlgEAAAsQlgEAAPsIngEAANgHngEAAGMPlgEAAO0SngEAADoSogEAANcS
+qwEAALYSqwEAAMEQswEAADQLuAEAAB0TvQECAAEAAwABAAIAAwACAAMABQABAAQABQACAAUABwAB
+AAYABwACAAcACQABAAgACQACAAkACwABAAoACwACABEADQACABIADwACABMAEQACABQAEwACABUA
+FQACABYAFwACABcAGQACABgAGwACABkAHQACABoAHwACABsAIQACABwAIwACACUAJQACACYAJwAB
+ACcAJwACACgAKQABACkAKQACACoAKwABACsAKwACACwALQABAC0ALQACAC4ALwABAC8ALwACADAA
+MQABADEAMQACADIAMwABADMAMwACADQANQABADUANQACADcANwABADgANwACADkAOQABADoAOQAC
+ADsAOwABADwAOwACAD0APQABAD4APQACAD8APwABAEAAPwACAEEAQQABAEIAQQACAEMAQwABAEQA
+QwACAEUARQABAEYARQACAEcARwABAEgARwACAEkASQABAEoASQACAEsASwABAEwASwACAE0ATQAB
+AE4ATQACAE8ATwABAFAATwACAFEAUQABAFIAUQACAFMAUwABAFQAUwACAFUAVQABAFYAVQACAFcA
+VwABAFgAVwACAFkAWQABAFoAWQACAFsAWwABAFwAWwACAF0AXQABAF4AXQACAF8AXwABAGAAXwAC
+AGEAYQABAGIAYQACAGMAYwABAGQAYwACAGUAZQABAGYAZQACAGcAZwABAGgAZwACAGkAaQABAGoA
+aQACAGsAawABAGwAawACAG0AbQABAG4AbQACAG8AbwABAHAAbwACAHEAcQABAHIAcQACAHMAcwAB
+AHQAcwACAHUAdQABAHYAdQACAHcAdwABAHgAdwACAHkAeQABAHoAeQACAH0AewACAH4AfQABAH8A
+fQACAIAAfwAyAEIATgBaAASAAAABAAAAAAAAAAAAAAAAAEEAAAAEAAAAAAAAAAAAAADvAIAAAAAA
+ABAAAAAAAAAAAAAAAPgAfRMAAAAABAAAAAAAAAAAAAAA7wArDwAAAAAQAAAAAAAAAAAAAAD4ALIT
+AAAAAAQAAAAAAAAAAAAAAAEBehIAAAAAEAAAAAAAAAAAAAAA+AAnEAAAAAAAAAAAAQAAAJARAAAA
+AABJRFRTVmFyaWFibGUxMDAASURUU1ZhcmlhYmxlczEwMABJRFRTRXZhbHVhdG9yQ29udGV4dDEw
+MABMaXN0YDEAU0NfZmQ3ZTc1OTBiZDIwNDMzZjhjZWVjOGUxMjc4NzljYzkAPE1vZHVsZT4ASW5w
+dXRJRABTeXN0ZW0uSU8AbXNjb3JsaWIAU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMAQWRkAGdl
+dF91c2VyX21hbmFnZWQAc2V0X3VzZXJfbWFuYWdlZABnZXRfaWQAPHVzZXJfbWFuYWdlZD5rX19C
+YWNraW5nRmllbGQAPHBhc3N3b3JkPmtfX0JhY2tpbmdGaWVsZAA8cmVmZXJlbmNlPmtfX0JhY2tp
+bmdGaWVsZAA8aW1hZ2U+a19fQmFja2luZ0ZpZWxkADxqb2JfdGl0bGVfZWRpdGFibGU+a19fQmFj
+a2luZ0ZpZWxkADxsYXN0TmFtZV9lZGl0YWJsZT5rX19CYWNraW5nRmllbGQAPGZpcnN0X25hbWVf
+ZWRpdGFibGU+a19fQmFja2luZ0ZpZWxkADxzdGFydF9kYXRlX2VkaXRhYmxlPmtfX0JhY2tpbmdG
+aWVsZAA8ZGF0ZV9vZl9iaXJ0aF9lZGl0YWJsZT5rX19CYWNraW5nRmllbGQAPGVtYWlsX2VkaXRh
+YmxlPmtfX0JhY2tpbmdGaWVsZAA8YmlvX2VkaXRhYmxlPmtfX0JhY2tpbmdGaWVsZAA8aXNfZWRp
+dGFibGU+a19fQmFja2luZ0ZpZWxkADxkZXBhcnRtZW50X2VkaXRhYmxlPmtfX0JhY2tpbmdGaWVs
+ZAA8am9iX3RpdGxlX3Zpc2libGU+a19fQmFja2luZ0ZpZWxkADxzdGFydF9kYXRlX3Zpc2libGU+
+a19fQmFja2luZ0ZpZWxkADxkYXRlX29mX2JpcnRoX3Zpc2libGU+a19fQmFja2luZ0ZpZWxkADxl
+bWFpbF92aXNpYmxlPmtfX0JhY2tpbmdGaWVsZAA8YmlvX3Zpc2libGU+a19fQmFja2luZ0ZpZWxk
+ADxtYW5hZ2VyX3Zpc2libGU+a19fQmFja2luZ0ZpZWxkADxpc192aXNpYmxlPmtfX0JhY2tpbmdG
+aWVsZAA8ZGVwYXJ0bWVudF92aXNpYmxlPmtfX0JhY2tpbmdGaWVsZAA8dGl0bGU+a19fQmFja2lu
+Z0ZpZWxkADxqb2JfdGl0bGU+a19fQmFja2luZ0ZpZWxkADxMYXN0TmFtZT5rX19CYWNraW5nRmll
+bGQAPEZpcnN0TmFtZT5rX19CYWNraW5nRmllbGQAPENvbXBhbnlOYW1lPmtfX0JhY2tpbmdGaWVs
+ZAA8bGFzdF9uYW1lPmtfX0JhY2tpbmdGaWVsZAA8Zmlyc3RfbmFtZT5rX19CYWNraW5nRmllbGQA
+PHVzZXJuYW1lPmtfX0JhY2tpbmdGaWVsZAA8UGhvbmU+a19fQmFja2luZ0ZpZWxkADx0eXBlPmtf
+X0JhY2tpbmdGaWVsZAA8c3RhcnRfZGF0ZT5rX19CYWNraW5nRmllbGQAPHZhbHVlPmtfX0JhY2tp
+bmdGaWVsZAA8bG9jYXRpb25fcmVmPmtfX0JhY2tpbmdGaWVsZAA8bWFuYWdlcl9yZWY+a19fQmFj
+a2luZ0ZpZWxkADxkYXRlX29mX2JpcnRoPmtfX0JhY2tpbmdGaWVsZAA8RW1haWw+a19fQmFja2lu
+Z0ZpZWxkADxlbWFpbD5rX19CYWNraW5nRmllbGQAPHBpbj5rX19CYWNraW5nRmllbGQAPGljb24+
+a19fQmFja2luZ0ZpZWxkADxiaW8+a19fQmFja2luZ0ZpZWxkADxkaXNwbGF5X29yZGVyPmtfX0Jh
+Y2tpbmdGaWVsZAA8YXR0cmlidXRlcz5rX19CYWNraW5nRmllbGQAPGdyb3Vwcz5rX19CYWNraW5n
+RmllbGQAPHZpc2libGVfdG9fZ3JvdXBzPmtfX0JhY2tpbmdGaWVsZAA8c3RhdHVzPmtfX0JhY2tp
+bmdGaWVsZAA8ZGVwYXJ0bWVudD5rX19CYWNraW5nRmllbGQAUmVhZFRvRW5kAHNldF9NZXRob2QA
+Z2V0X3Bhc3N3b3JkAHNldF9wYXNzd29yZABkZWZhdWx0SW5zdGFuY2UAZ2V0X3JlZmVyZW5jZQBz
+ZXRfcmVmZXJlbmNlAGdldF9pbWFnZQBzZXRfaW1hZ2UAZ2V0X01lc3NhZ2UASURpc3Bvc2FibGUA
+Z2V0X2pvYl90aXRsZV9lZGl0YWJsZQBzZXRfam9iX3RpdGxlX2VkaXRhYmxlAGdldF9sYXN0TmFt
+ZV9lZGl0YWJsZQBzZXRfbGFzdE5hbWVfZWRpdGFibGUAZ2V0X2ZpcnN0X25hbWVfZWRpdGFibGUA
+c2V0X2ZpcnN0X25hbWVfZWRpdGFibGUAZ2V0X3N0YXJ0X2RhdGVfZWRpdGFibGUAc2V0X3N0YXJ0
+X2RhdGVfZWRpdGFibGUAZ2V0X2RhdGVfb2ZfYmlydGhfZWRpdGFibGUAc2V0X2RhdGVfb2ZfYmly
+dGhfZWRpdGFibGUAZ2V0X2VtYWlsX2VkaXRhYmxlAHNldF9lbWFpbF9lZGl0YWJsZQBnZXRfYmlv
+X2VkaXRhYmxlAHNldF9iaW9fZWRpdGFibGUAZ2V0X2lzX2VkaXRhYmxlAHNldF9pc19lZGl0YWJs
+ZQBnZXRfZGVwYXJ0bWVudF9lZGl0YWJsZQBzZXRfZGVwYXJ0bWVudF9lZGl0YWJsZQBnZXRfam9i
+X3RpdGxlX3Zpc2libGUAc2V0X2pvYl90aXRsZV92aXNpYmxlAGdldF9zdGFydF9kYXRlX3Zpc2li
+bGUAc2V0X3N0YXJ0X2RhdGVfdmlzaWJsZQBnZXRfZGF0ZV9vZl9iaXJ0aF92aXNpYmxlAHNldF9k
+YXRlX29mX2JpcnRoX3Zpc2libGUAZ2V0X2VtYWlsX3Zpc2libGUAc2V0X2VtYWlsX3Zpc2libGUA
+Z2V0X2Jpb192aXNpYmxlAHNldF9iaW9fdmlzaWJsZQBnZXRfbWFuYWdlcl92aXNpYmxlAHNldF9t
+YW5hZ2VyX3Zpc2libGUAZ2V0X2lzX3Zpc2libGUAc2V0X2lzX3Zpc2libGUAZ2V0X2RlcGFydG1l
+bnRfdmlzaWJsZQBzZXRfZGVwYXJ0bWVudF92aXNpYmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5
+cGVGcm9tSGFuZGxlAEZpbGUAZ2V0X2pvYl90aXRsZQBzZXRfam9iX3RpdGxlAGdldF90aXRsZQBz
+ZXRfdGl0bGUAZ2V0X0xhc3ROYW1lAHNldF9MYXN0TmFtZQBnZXRfRmlyc3ROYW1lAHNldF9GaXJz
+dE5hbWUASW5wdXROYW1lAGdldF9Db21wYW55TmFtZQBzZXRfQ29tcGFueU5hbWUAZ2V0X2xhc3Rf
+bmFtZQBzZXRfbGFzdF9uYW1lAGdldF9maXJzdF9uYW1lAHNldF9maXJzdF9uYW1lAGdldF91c2Vy
+bmFtZQBzZXRfdXNlcm5hbWUAZ2V0X2xhc3RuYW1lAGdldF9maXJzdG5hbWUAZ2V0X2NvbXBhbnlu
+YW1lAFdyaXRlTGluZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBnZXRfUGhvbmUA
+c2V0X1Bob25lAHNldF9Db250ZW50VHlwZQBnZXRfdHlwZQBzZXRfdHlwZQBnZXRfQ3VsdHVyZQBz
+ZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UASHR0cFdl
+YlJlc3BvbnNlAEdldFJlc3BvbnNlAERpc3Bvc2UAZ2V0X3N0YXJ0X2RhdGUAc2V0X3N0YXJ0X2Rh
+dGUAQ3JlYXRlAEVkaXRvckJyb3dzYWJsZVN0YXRlAFdyaXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0
+cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARW5nYWdlQXR0cmlidXRlAERlYnVn
+Z2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRy
+aWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRl
+AEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmli
+dXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmli
+dXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBv
+aW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0
+eUF0dHJpYnV0ZQBQcmVFeGVjdXRlAFBvc3RFeGVjdXRlAGdldF92YWx1ZQBzZXRfdmFsdWUAU2Vy
+aWFsaXplAGdldF9sb2NhdGlvbl9yZWYAc2V0X2xvY2F0aW9uX3JlZgBnZXRfbWFuYWdlcl9yZWYA
+c2V0X21hbmFnZXJfcmVmAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAR2V0U3RyaW5nAGdldF9k
+YXRlX29mX2JpcnRoAHNldF9kYXRlX29mX2JpcnRoAFN5c3RlbS5Db21wb25lbnRNb2RlbABnZXRf
+RW1haWwAc2V0X0VtYWlsAGdldF9lbWFpbABzZXRfZW1haWwAU0NfZmQ3ZTc1OTBiZDIwNDMzZjhj
+ZWVjOGUxMjc4NzljYzkuZGxsAGdldF9pZF9Jc051bGwAZ2V0X2xhc3RuYW1lX0lzTnVsbABnZXRf
+Zmlyc3RuYW1lX0lzTnVsbABnZXRfY29tcGFueW5hbWVfSXNOdWxsAGdldF9lbWFpbF9Jc051bGwA
+Z2V0X3Bob25lbWFpbl9Jc051bGwAR2V0UmVzcG9uc2VTdHJlYW0AR2V0UmVxdWVzdFN0cmVhbQBn
+ZXRfSXRlbQBTeXN0ZW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBnZXRfcGhvbmVtYWluAGdldF9w
+aW4Ac2V0X3BpbgBnZXRfaWNvbgBzZXRfaWNvbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0u
+R2xvYmFsaXphdGlvbgBTeXN0ZW0uV2ViLlNjcmlwdC5TZXJpYWxpemF0aW9uAFN5c3RlbS5SZWZs
+ZWN0aW9uAFdlYkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZvAGdldF9iaW8A
+c2V0X2JpbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABNaWNyb3NvZnQuU3FsU2VydmVyLkRUU1J1
+bnRpbWVXcmFwAFN0cmVhbVJlYWRlcgBUZXh0UmVhZGVyAGdldF9jc3ZGb2xkZXIAZ2V0X2Rpc3Bs
+YXlfb3JkZXIAc2V0X2Rpc3BsYXlfb3JkZXIASW5wdXQwQnVmZmVyAFBpcGVsaW5lQnVmZmVyAFNj
+cmlwdEJ1ZmZlcgBnZXRfUmVzb3VyY2VNYW5hZ2VyAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1
+bnRpbWUuV3JhcHBlcgBFbmdhZ2VVc2VyAFN0cmVhbVdyaXRlcgBUZXh0V3JpdGVyAEphdmFTY3Jp
+cHRTZXJpYWxpemVyAEdldEVudW1lcmF0b3IALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGlj
+cwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU0NfZmQ3
+ZTc1OTBiZDIwNDMzZjhjZWVjOGUxMjc4NzljYzkuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3Vy
+Y2VzAERlYnVnZ2luZ01vZGVzAFNDX2ZkN2U3NTkwYmQyMDQzM2Y4Y2VlYzhlMTI3ODc5Y2M5LlBy
+b3BlcnRpZXMAZ2V0X1JlYWRPbmx5VmFyaWFibGVzAGdldF9hdHRyaWJ1dGVzAHNldF9hdHRyaWJ1
+dGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMAR2V0Q29sdW1uSW5kZXhlcwBTZXR0aW5ncwBFcXVhbHMA
+U3lzdGVtLldlYi5FeHRlbnNpb25zAENvbm5lY3Rpb25zAGdldF92aXNpYmxlX3RvX2dyb3VwcwBz
+ZXRfdmlzaWJsZV90b19ncm91cHMAZ2V0X2dyb3VwcwBzZXRfZ3JvdXBzAGdldF9zdGF0dXMAc2V0
+X3N0YXR1cwBDb25jYXQAT2JqZWN0AFN5c3RlbS5OZXQARW5kT2ZSb3dzZXQAZ2V0X0RlZmF1bHQA
+Z2V0X2RlcGFydG1lbnQAc2V0X2RlcGFydG1lbnQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25l
+bnQAU2NyaXB0Q29tcG9uZW50AGdldF9DdXJyZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3Jp
+cHQASHR0cFdlYlJlcXVlc3QAdXNlckxpc3QATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhv
+c3QASW5wdXQwX1Byb2Nlc3NJbnB1dABNb3ZlTmV4dABBcHBlbmRUZXh0AEdldFZhbHVlV2l0aENv
+bnRleHQAU2NyaXB0Q29tcG9uZW50RXZhbENvbnRleHQAZ2V0X0V2YWx1YXRvckNvbnRleHQASW5w
+dXQwX1Byb2Nlc3NJbnB1dFJvdwBOZXh0Um93AGdldF9Bc3NlbWJseQAAAAEAP2gAdAB0AHAAcwA6
+AC8ALwBsAG8AYwBhAGwAaABvAHMAdAA6ADcAMQA4ADEALwBQAG8AcwB0AFUAcwBlAHIAAAlQAE8A
+UwBUAAAhYQBwAHAAbABpAGMAYQB0AGkAbwBuAC8AagBzAG8AbgAAH1AAbwBzAHQAUgBlAHMAdQBs
+AHQAcwAuAHQAeAB0AAAPSQBuAHAAdQB0ACAAMAAAE2MAcwB2AEYAbwBsAGQAZQByAABxUwBDAF8A
+ZgBkADcAZQA3ADUAOQAwAGIAZAAyADAANAAzADMAZgA4AGMAZQBlAGMAOABlADEAMgA3ADgANwA5
+AGMAYwA5AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAAD+KfHL
+3U3DT6aOEhclkfEuAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARF1FgcJFRFFARIIEggSJA4SSRJN
+ElEOEk0GFRJBARIICCAAFRFFARMABhURRQESCAQgABMABRUSQQEOBSABARMABhUSQQESIAQgAQ4c
+BgABEoCFDgUgABKAiQYgAQESgIkFIAASgJUDIAAOBQACDg4OBQABEk0OAyAAAgkgAwESXR0IEmED
+BhJdAwYdCAQgAQ4IBCABAggHIAICDhGArQUgAR0ICAUgABKAsQYgARKAtRwFAAASgLkGIAEcEoC9
+CAABEoDBEYDFBSAAEoDJByACAQ4SgMkIt3pcVhk04IkIiYRdzYCAzJEIMb84Vq02TjUCBg4HBhUS
+QQESCAMGEhgDBhIcAwYSZQIGCAcGFRJBARIgBgYVEkEBDgMGEm0DBhJxAwYSLAUgAQESEAkgBAEI
+DhJdEmEFIAEBEmUDIAAICCAAFRJBARIgCSABARUSQQESIAcgABUSQQEOCCABARUSQQEOBAAAEm0E
+AAAScQUAAQEScQQAABIsAwAAAQMoAA4DKAACAygACAgoABUSQQESIAcoABUSQQEOBAgAEm0ECAAS
+cQQIABIsCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgB
+ACNTQ19mZDdlNzU5MGJkMjA0MzNmOGNlZWM4ZTEyNzg3OWNjOQAABQEAAAAAFgEAEUNvcHlyaWdo
+dCBAICAyMDIzAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rp
+c3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwQBAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0u
+UmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291
+cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAMhXAAAAAAAAAAAA
+AOJXAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADUVwAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1z
+Y29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAAGAAAgAAAAAAA
+AAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhgAADsAwAAAAAAAAAA
+AADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv/gAAAQAAAAEAAAAA
+AAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYAYQByAEYAaQBsAGUA
+SQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAAALAETAMAAAEAUwB0
+AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAAMAAwADQAYgAwAAAAGgABAAEA
+QwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBhAG0AZQAAAAAAAAAA
+AHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAEMAXwBmAGQANwBlADcA
+NQA5ADAAYgBkADIAMAA0ADMAMwBmADgAYwBlAGUAYwA4AGUAMQAyADcAOAA3ADkAYwBjADkAAAAw
+AAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAuADAAAABwACgAAQBJAG4A
+dABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfAGYAZAA3AGUANwA1ADkAMABiAGQAMgAwADQAMwAz
+AGYAOABjAGUAZQBjADgAZQAxADIANwA4ADcAOQBjAGMAOQAuAGQAbABsAAAASAASAAEATABlAGcA
+YQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAz
+AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIA
+aQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AZgBkADcAZQA3ADUAOQAwAGIAZAAy
+ADAANAAzADMAZgA4AGMAZQBlAGMAOABlADEAMgA3ADgANwA5AGMAYwA5AC4AZABsAGwAAABoACQA
+AQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfAGYAZAA3AGUANwA1ADkAMABiAGQAMgAw
+ADQAMwAzAGYAOABjAGUAZQBjADgAZQAxADIANwA4ADcAOQBjAGMAOQAAADQACAABAFAAcgBvAGQA
+dQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgAAQBBAHMAcwBlAG0AYgBs
+AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAA
-AFhAAADsAwAAAAAAAAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAA
-vQTv/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAAB
-AFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAA
-AAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAAMAAw
-ADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkA
-TgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABT
-AEMAXwBmAGQANwBlADcANQA5ADAAYgBkADIAMAA0ADMAMwBmADgAYwBlAGUAYwA4AGUAMQAyADcA
-OAA3ADkAYwBjADkAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAu
-ADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfAGYAZAA3AGUANwA1ADkA
-MABiAGQAMgAwADQAMwAzAGYAOABjAGUAZQBjADgAZQAxADIANwA4ADcAOQBjAGMAOQAuAGQAbABs
-AAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQA
-IABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAA
-AAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AZgBkADcA
-ZQA3ADUAOQAwAGIAZAAyADAANAAzADMAZgA4AGMAZQBlAGMAOABlADEAMgA3ADgANwA5AGMAYwA5
-AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfAGYAZAA3AGUA
-NwA1ADkAMABiAGQAMgAwADQAMwAzAGYAOABjAGUAZQBjADgAZQAxADIANwA4ADcAOQBjAGMAOQAA
-ADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgA
-AQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAcDkAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAMAAAA9DcAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -6023,7 +6295,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   </arrayElements>
                 </property>
                 <property
@@ -6040,7 +6312,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   dataType="System.String"
                   description="Specifies a comma-separated list of read-only variables."
                   name="ReadOnlyVariables"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg">User::csvFolder</property>
                 <property
                   dataType="System.String"
                   description="Specifies a comma-separated list of read/write variables."
@@ -6053,26 +6325,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="BreakpointCollection"
                   typeConverter="NOTBROWSABLE">
                   <arrayElements
-                    arrayElementCount="1">
-                    <arrayElement
-                      dataType="System.String">&lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
-&lt;SOAP-ENV:Body&gt;
-&lt;a1:ScriptBreakpointInfo id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Microsoft.SqlServer.VSTAHosting/Microsoft.SqlServer.VSTAScriptingLib%2C%20Version%3D16.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D89845dcd8080cc91"&gt;
-&lt;Enabled&gt;true&lt;/Enabled&gt;
-&lt;File id="ref-3"&gt;main.cs&lt;/File&gt;
-&lt;FileLine&gt;114&lt;/FileLine&gt;
-&lt;FileColumn&gt;20&lt;/FileColumn&gt;
-&lt;/a1:ScriptBreakpointInfo&gt;
-&lt;/SOAP-ENV:Body&gt;
-&lt;/SOAP-ENV:Envelope&gt;
-</arrayElement>
-                  </arrayElements>
+                    arrayElementCount="0" />
                 </property>
                 <property
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataChecksum140"
-                  typeConverter="NOTBROWSABLE">0B</property>
+                  typeConverter="NOTBROWSABLE">C6</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -7141,37 +7400,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="220,42"
-          Id="Package\import and process\JsonPlaceHolder Users Source"
-          TopLeft="193,24" />
+          Size="221,42"
+          Id="Package\import and process\json save to csv before merge"
+          TopLeft="156,422" />
         <NodeLayout
-          Size="147,42"
-          Id="Package\import and process\Duplicate Json"
-          TopLeft="182,227" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\import and process\json save to csv"
-          TopLeft="179,416" />
+          Size="216,42"
+          Id="Package\import and process\csv save to csv before merge"
+          TopLeft="478,366" />
         <NodeLayout
           Size="125,42"
           Id="Package\import and process\CSV input"
           TopLeft="576,9" />
         <NodeLayout
+          Size="220,42"
+          Id="Package\import and process\JsonPlaceHolder Users Source"
+          TopLeft="193,24" />
+        <NodeLayout
           Size="151,42"
           Id="Package\import and process\Sort by phone1"
           TopLeft="200,138" />
         <NodeLayout
-          Size="198,42"
-          Id="Package\import and process\save to csv before merge"
-          TopLeft="478,366" />
-        <NodeLayout
           Size="98,42"
           Id="Package\import and process\Sort"
           TopLeft="570,224" />
-        <NodeLayout
-          Size="196,42"
-          Id="Package\import and process\Add phone_main column"
-          TopLeft="518,124" />
         <NodeLayout
           Size="172,42"
           Id="Package\import and process\Flat File Destination"
@@ -7180,15 +7431,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="161,42"
           Id="Package\import and process\save to cache file"
           TopLeft="183,329" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\import and process\Add phone_main column"
+          TopLeft="518,124" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\import and process\Duplicate Json"
+          TopLeft="182,227" />
         <EdgeLayout
           Id="Package\import and process.Paths[Sort Output1]"
           TopLeft="619,266">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-42,100"
+              EndConnector="-33,100"
               Start="0,0"
-              End="-42,92.5">
+              End="-33,92.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -7199,13 +7458,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point2="0,50"
                     Point3="-4,50" />
                   <mssgle:LineSegment
-                    End="-38,50" />
+                    End="-29,50" />
                   <mssgle:CubicBezierSegment
-                    Point1="-38,50"
-                    Point2="-42,50"
-                    Point3="-42,54" />
+                    Point1="-29,50"
+                    Point2="-33,50"
+                    Point3="-33,54" />
                   <mssgle:LineSegment
-                    End="-42,92.5" />
+                    End="-33,92.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7398,18 +7657,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\import and process.Paths[Cache Output]"
-          TopLeft="259.75,371">
+          TopLeft="265,371">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="0,51"
               Start="0,0"
-              End="0,37.5">
+              End="0,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7437,11 +7696,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="159,42"
           Id="Package\merge data and post\Post to Mock API"
-          TopLeft="209,533" />
+          TopLeft="227,527" />
         <NodeLayout
           Size="98,42"
           Id="Package\merge data and post\Sort"
-          TopLeft="448,311" />
+          TopLeft="476,318" />
         <NodeLayout
           Size="156,42"
           Id="Package\merge data and post\Data Conversion"
@@ -7453,7 +7712,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="179,42"
           Id="Package\merge data and post\csv manual check file"
-          TopLeft="439,535.444444444444" />
+          TopLeft="442,529.444444444444" />
         <NodeLayout
           Size="145,42"
           Id="Package\merge data and post\csv file source"
@@ -7461,7 +7720,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="184,42"
           Id="Package\merge data and post\json manual check file"
-          TopLeft="682.777777777778,516.111111111111" />
+          TopLeft="676.777777777778,530.111111111111" />
         <NodeLayout
           Size="130,42"
           Id="Package\merge data and post\Merge Join"
@@ -7481,33 +7740,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="150,42"
           Id="Package\merge data and post\json file source"
-          TopLeft="621.444444444444,53.1111111111111" />
+          TopLeft="601.444444444444,72.1111111111111" />
         <EdgeLayout
           Id="Package\merge data and post.Paths[Sort Output2]"
-          TopLeft="497,353">
+          TopLeft="528.25,360">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="34.5,52"
+              EndConnector="0,45"
               Start="0,0"
-              End="34.5,44.5">
+              End="0,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="4,26" />
-                  <mssgle:LineSegment
-                    End="30.5,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="30.5,26"
-                    Point2="34.5,26"
-                    Point3="34.5,30" />
-                  <mssgle:LineSegment
-                    End="34.5,44.5" />
+                    End="0,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7586,18 +7833,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\merge data and post.Paths[Multicast Output 31]"
-          TopLeft="530,447">
+          TopLeft="531.5,447">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,88.4444444444445"
+              EndConnector="0,82.444444444444"
               Start="0,0"
-              End="0,80.9444444444445">
+              End="0,74.944444444444">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,80.9444444444445" />
+                    End="0,74.944444444444" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7698,30 +7945,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\merge data and post.Paths[Merge Output 1]"
-          TopLeft="313,462">
+          TopLeft="309.75,462">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-24.5,71"
+              EndConnector="0,65"
               Start="0,0"
-              End="-24.5,63.5">
+              End="0,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5"
-                    Point2="0,35.5"
-                    Point3="-4,35.5" />
-                  <mssgle:LineSegment
-                    End="-20.5,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20.5,35.5"
-                    Point2="-24.5,35.5"
-                    Point3="-24.5,39.5" />
-                  <mssgle:LineSegment
-                    End="-24.5,63.5" />
+                    End="0,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7732,30 +7967,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\merge data and post.Paths[Merge Join Output]"
-          TopLeft="761.666666666667,457.111111111111">
+          TopLeft="765.222222222223,457.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.1111111111111,58.9999999999999"
+              EndConnector="0,73"
               Start="0,0"
-              End="13.1111111111111,51.4999999999999">
+              End="0,65.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.5"
-                    Point2="0,29.5"
-                    Point3="4,29.5" />
-                  <mssgle:LineSegment
-                    End="9.11111111111109,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9.11111111111109,29.5"
-                    Point2="13.1111111111111,29.5"
-                    Point3="13.1111111111111,33.5" />
-                  <mssgle:LineSegment
-                    End="13.1111111111111,51.4999999999999" />
+                    End="0,65.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7806,62 +8029,62 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="85,44"
+              EndConnector="113,51"
               Start="0,0"
-              End="85,36.5">
+              End="113,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.9685863874346" />
+                    End="0,16.82722513089" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.9685863874346"
-                    Point2="0,17.9685863874346"
-                    Point3="4,17.9685863874346" />
+                    Point1="0,16.82722513089"
+                    Point2="0,20.82722513089"
+                    Point3="4,20.82722513089" />
                   <mssgle:LineSegment
-                    End="81,17.9685863874346" />
+                    End="109,20.82722513089" />
                   <mssgle:CubicBezierSegment
-                    Point1="81,17.9685863874346"
-                    Point2="85,17.9685863874346"
-                    Point3="85,21.9685863874346" />
+                    Point1="109,20.82722513089"
+                    Point2="113,20.82722513089"
+                    Point3="113,24.82722513089" />
                   <mssgle:LineSegment
-                    End="85,36.5" />
+                    End="113,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-5.69138671875,22.9685863874346,96.3827734375,11.609375"
+              BoundingBox="8.30861328125,25.82722513089,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\merge data and post.Paths[Flat File Source Output1]"
-          TopLeft="696.444444444444,95.1111111111111">
+          TopLeft="676.444444444444,114.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23.555555555556,59.2222222222219"
+              EndConnector="43.555555555556,40.2222222222219"
               Start="0,0"
-              End="23.555555555556,51.7222222222219">
+              End="43.555555555556,32.7222222222219">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.611111111111" />
+                    End="0,16.111111111111" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.611111111111"
-                    Point2="0,29.611111111111"
-                    Point3="4,29.611111111111" />
+                    Point1="0,16.111111111111"
+                    Point2="0,20.111111111111"
+                    Point3="4,20.111111111111" />
                   <mssgle:LineSegment
-                    End="19.555555555556,29.611111111111" />
+                    End="39.555555555556,20.111111111111" />
                   <mssgle:CubicBezierSegment
-                    Point1="19.555555555556,29.611111111111"
-                    Point2="23.555555555556,29.611111111111"
-                    Point3="23.555555555556,33.611111111111" />
+                    Point1="39.555555555556,20.111111111111"
+                    Point2="43.555555555556,20.111111111111"
+                    Point3="43.555555555556,24.111111111111" />
                   <mssgle:LineSegment
-                    End="23.555555555556,51.7222222222219" />
+                    End="43.555555555556,32.7222222222219" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
